@@ -1,16 +1,18 @@
 'use client';
 
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { UserRound } from 'lucide-react';
+import { Github, Linkedin, Twitter } from 'lucide-react';
+import AboutMe from '@/app/components/sections/AboutMe';
+import Experience from '@/app/components/sections/Experience';
+import Projects from '@/app/components/sections/Projects';
+
 const sections = [
   'About Me',
   'Work Experience',
   'Projects',
   'Resume',
-  'Contact',
   'Achievements',
-  'Hobbies',
+  'Blog',
 ];
 
 export default function PortfolioPage() {
@@ -21,7 +23,7 @@ export default function PortfolioPage() {
       const scrollY = window.scrollY;
       sections.forEach((section) => {
         const el = document.getElementById(section.toLowerCase().replace(/\s/g, '-'));
-        if (el && scrollY >= el.offsetTop - 100) {
+        if (el && scrollY >= el.offsetTop - 140) {
           setActive(section);
         }
       });
@@ -31,46 +33,102 @@ export default function PortfolioPage() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white scroll-smooth">
-      {/* Modern Navbar */}
-      <header className="fixed top-0 w-full z-50 bg-black/30 backdrop-blur-sm border-b border-indigo-400 shadow-lg">
-        <nav className="flex items-center justify-between px-6 py-4">
-          {/* Left: Logo + Name */}
-          <div className="flex items-center space-x-2">
-            <UserRound className="text-indigo-400" />
-            <span className="font-semibold text-white text-lg tracking-wide">Atharv More</span>
-          </div>
-
-          {/* Right: Section Links */}
-          <div className="flex flex-wrap gap-4 text-sm md:text-base">
-            {sections.map((section) => (
-              <a
-                key={section}
-                href={`#${section.toLowerCase().replace(/\s/g, '-')}`}
-                className={`transition-all duration-300 ${active === section ? 'text-indigo-400 font-semibold' : 'text-white hover:text-indigo-300'
+    <div className="bg-black text-white font-sans scroll-smooth">
+      {/* Navbar */}
+      <header className="sticky top-0 z-50 bg-black/80 backdrop-blur border-b border-white/10">
+        <div className="relative max-w-7xl mx-auto px-6 py-4 flex justify-center items-center">
+          {/* Center Nav Links */}
+          <nav className="flex gap-6 text-sm md:text-base font-medium">
+            {sections.map((section) => {
+              const isActive = active === section;
+              return (
+                <a
+                  key={section}
+                  href={`#${section.toLowerCase().replace(/\s/g, '-')}`}
+                  className={`relative px-2 text-gray-400 hover:text-white transition-all duration-300 ${
+                    isActive ? 'text-white font-semibold' : ''
                   }`}
-              >
-                {section}
-              </a>
-            ))}
+                >
+                  {section}
+                  {isActive && (
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white rounded-full" />
+                  )}
+                </a>
+              );
+            })}
+          </nav>
+
+          {/* Top-right Social Icons */}
+          <div className="absolute right-6 flex gap-4 text-gray-400">
+            <a
+              href="https://github.com/yourhandle"
+              target="_blank"
+              aria-label="GitHub"
+              className="hover:text-white"
+            >
+              <Github size={20} />
+            </a>
+            <a
+              href="https://linkedin.com/in/yourhandle"
+              target="_blank"
+              aria-label="LinkedIn"
+              className="hover:text-white"
+            >
+              <Linkedin size={20} />
+            </a>
           </div>
-        </nav>
+        </div>
       </header>
-      {/* Sections */}
-      <main className="pt-24 space-y-32 px-6 max-w-4xl mx-auto">
-        {sections.map((section) => (
-          <section
-            key={section}
-            id={section.toLowerCase().replace(/\s/g, '-')}
-            className="scroll-mt-24"
-          >
-            <h2 className="text-3xl font-bold mb-4 border-b border-indigo-500 pb-2">
-              {section}
-            </h2>
-            <p className="text-gray-300">🚧 {section} content coming soon.</p>
-          </section>
-        ))}
+
+      {/* Main Page Content */}
+      <main className="max-w-6xl mx-auto px-6 py-20 space-y-32">
+        <AboutMe />
+        <Experience />
+        <Projects />
+        {/* Resume, Achievements, Blog sections can go here */}
       </main>
+
+      {/* Footer */}
+      <footer className="mt-32 border-t border-white/10 py-6 text-center text-sm text-gray-500">
+        <div className="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto px-6 gap-4">
+          {/* Resume Download */}
+          <a
+            href="/resume.pdf"
+            download
+            className="text-white bg-indigo-600 px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition"
+          >
+            📄 Download Resume
+          </a>
+
+          {/* Footer Social Links */}
+          <div className="flex gap-4 text-gray-400">
+            <a
+              href="https://github.com/yourhandle"
+              target="_blank"
+              className="hover:text-white"
+              aria-label="GitHub"
+            >
+              <Github size={20} />
+            </a>
+            <a
+              href="https://linkedin.com/in/yourhandle"
+              target="_blank"
+              className="hover:text-white"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={20} />
+            </a>
+            <a
+              href="https://twitter.com/yourhandle"
+              target="_blank"
+              className="hover:text-white"
+              aria-label="Twitter"
+            >
+              <Twitter size={20} />
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
