@@ -1,17 +1,32 @@
 'use client';
+
 import Link from 'next/link';
 import { useState } from 'react';
-import SplashScreen from '@/app/components/SplashScreen';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
+import SplashScreen from '@/app/components/SplashScreen';
+import WorldTransition from './components/WorldTransition';
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
+  const [startTransition, setStartTransition] = useState(false);
+  const router = useRouter();
+
+  const handleExplore = () => {
+    setStartTransition(true); 
+  };
+
+  const handleWorldTransitionComplete = () => {
+    router.push('/portfolio');
+  };
 
   return (
     <>
-      {showSplash ? (
-        <SplashScreen onFinish={() => setShowSplash(false)} />
-      ) : (
+      {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
+
+      {startTransition && <WorldTransition onComplete={handleWorldTransitionComplete} />}
+
+      {!showSplash && !startTransition && (
         <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white p-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -25,11 +40,12 @@ export default function Home() {
             <p className="text-lg md:text-xl text-gray-300 mb-6">
               A passionate developer crafting modern and interactive web experiences.
             </p>
-            <Link href="/portfolio">
-              <button className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-2 px-6 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 border border-indigo-500 hover:border-purple-400 cursor-pointer">
-                Explore my world!
-              </button>
-            </Link>
+            <button
+              onClick={handleExplore}
+              className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-2 px-6 rounded-lg shadow-lg hover:scale-105 transition-all border border-indigo-500 hover:border-purple-400 cursor-pointer"
+            >
+              Explore my world!
+            </button>
           </motion.div>
         </main>
       )}
