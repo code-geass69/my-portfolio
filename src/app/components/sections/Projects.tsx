@@ -15,24 +15,25 @@ const projects: Project[] = [
   {
     title: 'Smart Inventory System',
     description:
-      'AI-powered system for inventory tracking, sales analytics, and restock alerts with a custom dashboard.',
-    tech: ['Next.js', 'MySQL', 'DrizzleORM', 'Gemini API'],
-    github: 'https://github.com/yourhandle/smart-inventory',
+      'Smart inventory management system is tailored for e-commerce companies, it is versatile enough to meet the needs of any business requiring meticulous stock control. Explore its power to streamline your operations, providing a comprehensive solution for overseeing your stock and optimizing business processes.',
+    tech: ['Next.js', 'Postgres', 'DrizzleORM', 'Tailwind CSS'],
+    github: 'https://github.com/code-geass69/smart_inventory_management',
     demo: 'https://inventory-demo.vercel.app',
   },
   {
-    title: 'Meal Planner AI',
+    title: 'Online Art Gallery',
     description:
-      'Personalized weekly meal plans generated using Gemini based on user goals, inventory, and health.',
-    tech: ['Next.js', 'Tailwind', 'Gemini Pro', 'MySQL'],
-    github: 'https://github.com/yourhandle/meal-planner',
+      'Welcome to the Online Art Gallery — where art meets technology. This platform offers a visually immersive journey through my curated collection. Each piece is thoughtfully presented for a smooth and engaging experience. Designed to inspire, connect, and celebrate creativity in every form.',
+    tech: ['Node.js', 'Express.js', 'EJS', 'Tailwind CSS', 'MongoDB'],
+    github: 'https://github.com/code-geass69/Online_Art_Gallery',
+    demo: 'https://a-raandom-artist.onrender.com/',
   },
   {
-    title: 'Portfolio Website',
+    title: 'Student Performance Predictor',
     description:
-      'Animated, fully responsive portfolio with world intro, dark theme, and Framer Motion transitions.',
-    tech: ['Next.js', 'Tailwind', 'Framer Motion'],
-    github: 'https://github.com/yourhandle/portfolio',
+      'Our project harnesses the power of machine learning to forecast student performance in mathematics, unveiling the intricate interplay of various factors. By accurately predicting outcomes, we pave the way for tailored interventions and targeted support, ensuring no student is left behind.',
+    tech: ['Python', 'Pandas & Numpy', 'Scikit-learn', 'Flask'],
+    github: 'https://github.com/code-geass69/Student-Performance-Prediction',
     demo: 'https://yourportfolio.vercel.app',
   },
 ];

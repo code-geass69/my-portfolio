@@ -17,23 +17,51 @@ const sections = [
 
 export default function PortfolioPage() {
   const [active, setActive] = useState('');
+  const [scrollProgress, setScrollProgress] = useState(0);
 
+  // IntersectionObserver for scroll-activated nav highlighting
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      sections.forEach((section) => {
-        const el = document.getElementById(section.toLowerCase().replace(/\s/g, '-'));
-        if (el && scrollY >= el.offsetTop - 140) {
-          setActive(section);
-        }
-      });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id.replace(/-/g, ' ');
+            setActive(sections.find((s) => s.toLowerCase() === id) || '');
+          }
+        });
+      },
+      {
+        rootMargin: '-40% 0px -50% 0px',
+        threshold: 0,
+      }
+    );
+
+    sections.forEach((section) => {
+      const el = document.getElementById(section.toLowerCase().replace(/\s/g, '-'));
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Scroll progress bar logic
+  useEffect(() => {
+    const updateScrollProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setScrollProgress(progress);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', updateScrollProgress);
+    return () => window.removeEventListener('scroll', updateScrollProgress);
   }, []);
 
   return (
     <div className="bg-black text-white font-sans scroll-smooth">
+      {/* Scroll Progress Bar */}
+      <div className="fixed top-0 left-0 z-[60] h-1 bg-indigo-500 transition-width duration-200" style={{ width: `${scrollProgress}%` }} />
+
       {/* Navbar */}
       <header className="sticky top-0 z-50 bg-black/80 backdrop-blur border-b border-white/10">
         <div className="relative max-w-7xl mx-auto px-6 py-4 flex justify-center items-center">
@@ -51,7 +79,7 @@ export default function PortfolioPage() {
                 >
                   {section}
                   {isActive && (
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white rounded-full" />
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white rounded-full transition-all duration-300" />
                   )}
                 </a>
               );
@@ -61,7 +89,7 @@ export default function PortfolioPage() {
           {/* Top-right Social Icons */}
           <div className="absolute right-6 flex gap-4 text-gray-400">
             <a
-              href="https://github.com/yourhandle"
+              href="https://github.com/code-geass69"
               target="_blank"
               aria-label="GitHub"
               className="hover:text-white"
@@ -69,7 +97,7 @@ export default function PortfolioPage() {
               <Github size={20} />
             </a>
             <a
-              href="https://linkedin.com/in/yourhandle"
+              href="https://www.linkedin.com/in/atharv-more"
               target="_blank"
               aria-label="LinkedIn"
               className="hover:text-white"
@@ -103,7 +131,7 @@ export default function PortfolioPage() {
           {/* Footer Social Links */}
           <div className="flex gap-4 text-gray-400">
             <a
-              href="https://github.com/yourhandle"
+              href="https://github.com/code-geass69"
               target="_blank"
               className="hover:text-white"
               aria-label="GitHub"
@@ -111,7 +139,7 @@ export default function PortfolioPage() {
               <Github size={20} />
             </a>
             <a
-              href="https://linkedin.com/in/yourhandle"
+              href="https://www.linkedin.com/in/atharv-more"
               target="_blank"
               className="hover:text-white"
               aria-label="LinkedIn"

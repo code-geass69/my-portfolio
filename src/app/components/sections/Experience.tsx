@@ -2,67 +2,58 @@
 
 import { motion } from 'framer-motion';
 
-interface ExperienceItem {
-  company: string;
-  role: string;
-  period: string;
-  location: string;
-  description: string;
-}
-
-const experiences: ExperienceItem[] = [
+const experiences = [
   {
-    company: 'Flipkart',
-    role: 'Data Science Intern',
-    period: 'Jan 2025 – Apr 2025',
+    title: 'Web Developer Associate @ Brimo Software Solutions',
+    date: 'Sept 2024 – June 2025',
     location: 'Remote',
-    description: 'Worked on customer behavior analytics and real-time dashboard insights using PostgreSQL, Flask, and Python scripts.',
+    description:
+      'Perform the development and maintenance of backend systems using Python Django and GraphQL, ensuring seamless API integration and optimized data handling.',
   },
   {
-    company: 'TCS',
-    role: 'GenAI Intern',
-    period: 'Jul 2024 – Aug 2024',
+    title: 'Web Development Intern @ CodSoft',
+    date: 'Oct 2023 – Nov 2023',
     location: 'Remote',
-    description: 'Built ESG report generation pipeline using Azure + OpenAI + FastAPI with Copilot integration.',
-  },
-  {
-    company: 'Knowles Corp',
-    role: 'GenAI Intern',
-    period: 'May 2024 – Jul 2024',
-    location: 'Remote (USA)',
-    description: 'Developed GPT knowledge assistant with Graphana logs, Airflow pipelines, and prompt-based search tools.',
+    description:
+      'Developed a dynamic, business-focused company website under a project-based contract, using HTML, CSS, and JavaScript to create a responsive and visually appealing web presence.',
   },
 ];
 
 export default function Experience() {
   return (
-    <motion.section
-      id="work-experience"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="scroll-mt-24"
-    >
-      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+    <section id="work-experience" className="scroll-mt-24">
+      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-white">
         02. Work Experience
       </h2>
 
-      <ol className="relative border-l border-white/10 space-y-12">
-        {experiences.map((item, index) => (
-          <li key={index} className="ml-6">
-            <span className="absolute left-0 top-1.5 w-3 h-3 bg-purple-500 rounded-full ring-4 ring-black" />
-            <div className="bg-white/5 p-4 rounded-md border border-white/10 shadow-sm hover:shadow-lg transition-all duration-300">
-              <div className="flex justify-between items-center mb-1">
-                <h3 className="text-lg font-semibold text-white">{item.role} @ {item.company}</h3>
-                <span className="text-sm text-gray-400">{item.period}</span>
+      <div className="relative border-l border-white/10 ml-3">
+        {experiences.map((exp, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            className="relative mb-10 ml-4"
+          >
+            {/* Purple dot */}
+            <span className="absolute -left-[22px] top-2 w-3 h-3 bg-purple-500 rounded-full"></span>
+
+            {/* Card */}
+            <div className="bg-white/5 p-5 rounded-md border border-white/10">
+              <div className="flex justify-between items-start flex-col md:flex-row">
+                <h3 className="text-white font-semibold text-lg mb-2 md:mb-0">
+                  {exp.title}
+                </h3>
+                <span className="text-sm text-gray-400">{exp.date}</span>
               </div>
-              <p className="text-sm text-gray-400 mb-1">{item.location}</p>
-              <p className="text-sm text-gray-300">{item.description}</p>
+              <p className="text-sm text-gray-400 mb-1">{exp.location}</p>
+              <p className="text-sm text-gray-300 leading-relaxed">
+                {exp.description}
+              </p>
             </div>
-          </li>
+          </motion.div>
         ))}
-      </ol>
-    </motion.section>
+      </div>
+    </section>
   );
 }
