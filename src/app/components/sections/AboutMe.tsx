@@ -32,7 +32,7 @@ export default function AboutMe() {
         {/* Text */}
         <div className="space-y-5 text-gray-300 text-sm md:text-base leading-relaxed text-justify tracking-wide md:leading-7">
           <p>
-            Hi, I’m <strong className="text-white font-semibold">Atharv More</strong>, a Computer Engineering student at the <span className="text-white font-semibold">University of Mumbai</span>, passionate about turning ideas into impactful digital solutions.
+            Hi, I&apos;m <strong className="text-white font-semibold">Atharv More</strong>, a Computer Engineering student at the <span className="text-white font-semibold">University of Mumbai</span>, passionate about turning ideas into impactful digital solutions.
           </p>
 
           <p>
@@ -40,11 +40,11 @@ export default function AboutMe() {
           </p>
 
           <p>
-            I'm deeply fascinated by <span className="text-white font-semibold">Artificial Intelligence</span> and love exploring <span className="text-white font-semibold">research in data-driven systems and intelligent automation</span>.
+            I&apos;m deeply fascinated by <span className="text-white font-semibold">Artificial Intelligence</span> and love exploring <span className="text-white font-semibold">research in data-driven systems and intelligent automation</span>.
           </p>
 
           <p>
-            I’m driven by <span className="text-indigo-400 font-semibold">curiosity, creativity, and clean code</span>. When I’m not building software, you&apos;ll find me reading thought-provoking books, painting, or trekking through the hills.
+            I&apos;m driven by <span className="text-indigo-400 font-semibold">curiosity, creativity, and clean code</span>. When I&apos;m not building software, you&apos;ll find me reading thought-provoking books, painting, or trekking through the hills.
           </p>
 
           <div className="mt-4 flex flex-wrap gap-2">
