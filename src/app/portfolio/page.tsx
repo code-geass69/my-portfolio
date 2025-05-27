@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import AboutMe from '@/app/components/sections/AboutMe';
 import Experience from '@/app/components/sections/Experience';
 import Projects from '@/app/components/sections/Projects';

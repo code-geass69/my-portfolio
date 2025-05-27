@@ -20,10 +20,13 @@ export default function AboutMe() {
 
       <div className="grid md:grid-cols-2 gap-8 items-center">
         {/* Image */}
-        <img
+
+        <Image
           src="/images/me.jpg"
           alt="Atharv More"
-          className="rounded-lg w-80 max-w-sm shadow-lg border border-white/10"
+          width={320}
+          height={320}
+          className="rounded-lg w-80 max-w-sm shadow-lg border border-white/10 object-cover"
         />
 
         {/* Text */}
