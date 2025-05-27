@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import me from '@/app/components/static/me.jpg'
+import Image from 'next/image';
 export default function AboutMe() {
   const skills = ['Python', 'C++', 'MySQL', 'Django', 'Postgres', 'GraphQL'];
 
@@ -21,7 +21,7 @@ export default function AboutMe() {
       <div className="grid md:grid-cols-2 gap-8 items-center">
         {/* Image */}
         <img
-          src={me.src}
+          src="/images/me.jpg"
           alt="Atharv More"
           className="rounded-lg w-80 max-w-sm shadow-lg border border-white/10"
         />
