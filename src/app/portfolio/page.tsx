@@ -1,19 +1,20 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 import AboutMe from '@/app/components/sections/AboutMe';
 import Experience from '@/app/components/sections/Experience';
 import Projects from '@/app/components/sections/Projects';
 import Education from '@/app/components/sections/Education';
+import Certificate from '@/app/components/sections/Certificate';
 
 const sections = [
   'About Me',
   'Work Experience',
   'Projects',
   'Education',
-  'Achievements',
-  'Blog',
+  'Certificates',
+
 ];
 
 export default function PortfolioPage() {
@@ -74,9 +75,8 @@ export default function PortfolioPage() {
                 <a
                   key={section}
                   href={`#${section.toLowerCase().replace(/\s/g, '-')}`}
-                  className={`relative px-2 text-gray-400 hover:text-white transition-all duration-300 ${
-                    isActive ? 'text-white font-semibold' : ''
-                  }`}
+                  className={`relative px-2 text-gray-400 hover:text-white transition-all duration-300 ${isActive ? 'text-white font-semibold' : ''
+                    }`}
                 >
                   {section}
                   {isActive && (
@@ -105,6 +105,13 @@ export default function PortfolioPage() {
             >
               <Linkedin size={20} />
             </a>
+            <a
+              href="mailto:atharvmore30@gmail.com"
+              aria-label="Send Email"
+              className="hover:text-white"
+            >
+              <Mail size={20} />
+            </a>
           </div>
         </div>
       </header>
@@ -115,46 +122,45 @@ export default function PortfolioPage() {
         <Experience />
         <Projects />
         <Education />
-        {/* Resume, Achievements, Blog sections can go here */}
+        <Certificate />
       </main>
 
       {/* Footer */}
-      <footer className="mt-32 border-t border-white/10 py-6 text-center text-sm text-gray-500">
-        <div className="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto px-6 gap-4">
-          {/* Resume Download */}
-          <a
-            href="/resume.pdf"
-            download
-            className="text-white bg-indigo-600 px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition"
-          >
-            📄 Download Resume
-          </a>
+      <footer className="mt-32 border-t border-white/10 py-10 text-sm text-gray-400 bg-black">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
 
-          {/* Footer Social Links */}
-          <div className="flex gap-4 text-gray-400">
+          {/* Left: Personal Info */}
+          <div className="space-y-2 text-center md:text-left">
+            <h4 className="text-white text-lg font-semibold"> Atharv More</h4>
+            <div className="flex items-center justify-center md:justify-start gap-2">
+              <a href="mailto:atharvmore30@gmail.com" className="font-bold hover:underline">✉ atharvmore30@gmail.com</a>
+            </div>
+            <div className="font-bold text-center md:text-left">
+              <a className="hover:underline">☏ +91-9167356290</a>
+            </div>
+          </div>
+
+          <div className="hidden md:block" />
+
+          <div className="flex flex-col items-center md:items-end gap-4">
+            <div className="flex gap-8 text-gray-400 pr-6">
+              <a href="https://github.com/code-geass69" target="_blank" className="hover:text-white" aria-label="GitHub">
+                <Github size={20} />
+              </a>
+              <a href="https://linkedin.com/in/atharv-more" target="_blank" className="hover:text-white" aria-label="LinkedIn">
+                <Linkedin size={20} />
+              </a>
+              <a href="mailto:atharvmore30@gmail.com" className="hover:text-white" aria-label="Email">
+                <Mail size={20} />
+              </a>
+            </div>
+
             <a
-              href="https://github.com/code-geass69"
-              target="_blank"
-              className="hover:text-white"
-              aria-label="GitHub"
+              href="https://drive.google.com/file/d/1CzIZ7I-tb0Be_8BzOyNfHz5MADdqn1i0/view?usp=drive_link"
+              download
+              className="inline-flex items-center gap-2 text-white bg-indigo-600 px-4 py-2 rounded-md font-medium hover:bg-indigo-700 transition"
             >
-              <Github size={20} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/atharv-more"
-              target="_blank"
-              className="hover:text-white"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={20} />
-            </a>
-            <a
-              href="https://twitter.com/yourhandle"
-              target="_blank"
-              className="hover:text-white"
-              aria-label="Twitter"
-            >
-              <Twitter size={20} />
+               📝 Download Resume
             </a>
           </div>
         </div>

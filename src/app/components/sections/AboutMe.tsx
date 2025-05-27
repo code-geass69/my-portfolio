@@ -37,6 +37,10 @@ export default function AboutMe() {
           </p>
 
           <p>
+            I'm deeply fascinated by <span className="text-white font-semibold">Artificial Intelligence</span> and love exploring <span className="text-white font-semibold">research in data-driven systems and intelligent automation</span>.
+          </p>
+
+          <p>
             I’m driven by <span className="text-indigo-400 font-semibold">curiosity, creativity, and clean code</span>. When I’m not building software, you’ll find me reading thought-provoking books, painting, or trekking through the hills.
           </p>
 

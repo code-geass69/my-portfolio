@@ -38,7 +38,7 @@ export default function Home() {
               I’m <span className="text-indigo-400">Atharv More</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-6">
-              A passionate developer crafting modern and interactive web experiences.
+             Building seamless digital experiences with code, curiosity, and creativity.
             </p>
             <button
               onClick={handleExplore}
