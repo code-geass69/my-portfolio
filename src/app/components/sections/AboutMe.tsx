@@ -22,7 +22,7 @@ export default function AboutMe() {
         {/* Image */}
 
         <Image
-          src="/images/me.jpg"
+          src="/images/me.JPG"
           alt="Atharv More"
           width={320}
           height={320}
