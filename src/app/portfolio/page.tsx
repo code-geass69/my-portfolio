@@ -5,12 +5,13 @@ import { Github, Linkedin, Twitter } from 'lucide-react';
 import AboutMe from '@/app/components/sections/AboutMe';
 import Experience from '@/app/components/sections/Experience';
 import Projects from '@/app/components/sections/Projects';
+import Education from '@/app/components/sections/Education';
 
 const sections = [
   'About Me',
   'Work Experience',
   'Projects',
-  'Resume',
+  'Education',
   'Achievements',
   'Blog',
 ];
@@ -113,6 +114,7 @@ export default function PortfolioPage() {
         <AboutMe />
         <Experience />
         <Projects />
+        <Education />
         {/* Resume, Achievements, Blog sections can go here */}
       </main>
 
