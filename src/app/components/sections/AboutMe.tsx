@@ -44,7 +44,7 @@ export default function AboutMe() {
           </p>
 
           <p>
-            I’m driven by <span className="text-indigo-400 font-semibold">curiosity, creativity, and clean code</span>. When I’m not building software, you’ll find me reading thought-provoking books, painting, or trekking through the hills.
+            I’m driven by <span className="text-indigo-400 font-semibold">curiosity, creativity, and clean code</span>. When I’m not building software, you&apos;ll find me reading thought-provoking books, painting, or trekking through the hills.
           </p>
 
           <div className="mt-4 flex flex-wrap gap-2">
