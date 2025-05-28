@@ -7,6 +7,7 @@ import Experience from '@/app/components/sections/Experience';
 import Projects from '@/app/components/sections/Projects';
 import Education from '@/app/components/sections/Education';
 import Certificate from '@/app/components/sections/Certificate';
+import Contributions from '@/app/components/sections/Contributions';
 
 const sections = [
   'About Me',
@@ -14,6 +15,7 @@ const sections = [
   'Projects',
   'Education',
   'Certificates',
+  'Contributions'
 
 ];
 
@@ -123,6 +125,7 @@ export default function PortfolioPage() {
         <Projects />
         <Education />
         <Certificate />
+        <Contributions />
       </main>
 
       {/* Footer */}
