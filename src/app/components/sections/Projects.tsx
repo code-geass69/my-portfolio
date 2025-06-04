@@ -20,7 +20,7 @@ const projects: Project[] = [
       'Smart inventory management system is tailored for e-commerce companies, it is versatile enough to meet the needs of any business requiring meticulous stock control. Explore its power to streamline your operations, providing a comprehensive solution for overseeing your stock and optimizing business processes.',
     tech: ['Next.js', 'Postgres', 'DrizzleORM', 'Tailwind CSS'],
     github: 'https://github.com/code-geass69/smart_inventory_management',
-    demo: 'https://inventory-demo.vercel.app',
+    demo: 'https://smart-inventory-management-nu.vercel.app/',
     image: '/images/inventory.png',
   },
   {
