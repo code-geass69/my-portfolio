@@ -9,6 +9,7 @@ const experiences = [
     location: 'Remote',
     description:
       'Perform the development and maintenance of backend systems using Python Django and GraphQL, ensuring seamless API integration and optimized data handling.',
+    certificateUrl: 'https://drive.google.com/file/d/1LrZaY9EKGtNvtl8tyQXTW47Gb8hENGeB/view?usp=drive_link', 
   },
   {
     title: 'Web Development Intern @ CodSoft',
@@ -16,6 +17,7 @@ const experiences = [
     location: 'Remote',
     description:
       'Developed a dynamic, business-focused company website under a project-based contract, using HTML, CSS, and JavaScript to create a responsive and visually appealing web presence.',
+    certificateUrl: 'https://drive.google.com/file/d/1CLN8u9yc6HOSzRyJdvv7O2pFmZvqqhL6/view?usp=drive_link',
   },
 ];
 
@@ -50,6 +52,18 @@ export default function Experience() {
               <p className="text-sm text-gray-300 leading-relaxed">
                 {exp.description}
               </p>
+
+              {/* Certificate Link */}
+              {exp.certificateUrl && (
+                <a
+                  href={exp.certificateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-3 text-sm text-purple-400 hover:underline"
+                >
+                  📄 View Certificate
+                </a>
+              )}
             </div>
           </motion.div>
         ))}
