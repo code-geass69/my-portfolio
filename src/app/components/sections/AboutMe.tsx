@@ -32,7 +32,7 @@ export default function AboutMe() {
         {/* Text */}
         <div className="space-y-5 text-gray-300 text-sm md:text-base leading-relaxed text-justify tracking-wide md:leading-7">
           <p>
-            Hi, I'm <strong className="text-white font-semibold">Atharv More</strong>, a Computer Engineering graduate and <span className="text-white font-semibold">Analyst in Cyber Defence & Resilience at Deloitte</span>, passionate about building secure and impactful digital solutions.
+            Hi, I&apos;m <strong className="text-white font-semibold">Atharv More</strong>, a Computer Engineering graduate and <span className="text-white font-semibold">Analyst in Cyber Defence &amp; Resilience at Deloitte</span>, passionate about building secure and impactful digital solutions.
           </p>
 
           <p>
@@ -40,15 +40,15 @@ export default function AboutMe() {
           </p>
 
           <p>
-            With a foundation in <span className="text-white font-semibold">Python, Django, GraphQL, React</span>, and databases like <span className="text-white font-semibold">MySQL</span>, <span className="text-white font-semibold">PostgreSQL</span> & <span className="text-white font-semibold">MongoDB</span>, I develop efficient and scalable systems.
+            With a foundation in <span className="text-white font-semibold">Python, Django, GraphQL, React</span>, and databases like <span className="text-white font-semibold">MySQL</span>, <span className="text-white font-semibold">PostgreSQL</span> &amp; <span className="text-white font-semibold">MongoDB</span>, I develop efficient and scalable systems.
           </p>
 
           <p>
-            I'm deeply fascinated by <span className="text-white font-semibold">Artificial Intelligence</span> and actively explore <span className="text-white font-semibold">data-driven systems and intelligent automation</span>.
+            I&apos;m deeply fascinated by <span className="text-white font-semibold">Artificial Intelligence</span> and actively explore <span className="text-white font-semibold">data-driven systems and intelligent automation</span>.
           </p>
 
           <p>
-            I'm driven by <span className="text-indigo-400 font-semibold">curiosity, creativity, and clean code</span>. Outside of work, I enjoy reading thought-provoking books, painting, and trekking through the hills.
+            I&apos;m driven by <span className="text-indigo-400 font-semibold">curiosity, creativity, and clean code</span>. Outside of work, I enjoy reading thought-provoking books, painting, and trekking through the hills.
           </p>
 
           <div className="mt-4 flex flex-wrap gap-2">
