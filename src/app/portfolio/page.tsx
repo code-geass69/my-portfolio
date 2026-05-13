@@ -23,7 +23,6 @@ export default function PortfolioPage() {
   const [active, setActive] = useState('');
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  // IntersectionObserver for scroll-activated nav highlighting
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -159,7 +158,7 @@ export default function PortfolioPage() {
             </div>
 
             <a
-              href="https://drive.google.com/file/d/1CzIZ7I-tb0Be_8BzOyNfHz5MADdqn1i0/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1whkKHw93UsdnDISEViBO4sR2UuNU5LzZ/view?usp=sharing"
               download
               className="inline-flex items-center gap-2 text-white bg-indigo-600 px-4 py-2 rounded-md font-medium hover:bg-indigo-700 transition"
             >
